@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     30 Nov 2016 14:13:34                                                        
+
+     project    
+     description
+                   
+     markdrew                                                                
+     ====================================================================== -->
+<project name="project" default="default">
+    <description>
+            Syncs file from a source folder to a destination folder
+    </description>
+
+	<property name="destination" location="./destination_dir" />
+	<property name="source" location="./source_dir" />
+    <!-- ================================= 
+          target: default              
+         ================================= -->
+    <target name="default" depends="syncfiles" description="main entry point">
+        <echo>Finished Synching files!</echo>
+    </target>
+
+    <!-- - - - - - - - - - - - - - - - - - 
+          target: depends                      
+         - - - - - - - - - - - - - - - - - -->
+    <target name="syncfiles">
+    	
+    	<sync todir="${destination}" includeemptydirs="true">
+    	  <fileset dir="${source}"/>
+    	  <preserveintarget>
+    	    
+    	  </preserveintarget>
+    	</sync>
+
+    	
+    </target>
+
+</project>
