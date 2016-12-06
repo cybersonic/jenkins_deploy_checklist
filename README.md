@@ -22,6 +22,7 @@ Failed to connect to repository : Command "git ls-remote -h git@github.com:cyber
 1.  Now we can test if it automatically runs by changing a file in the repo. 
 
 ## Deploying the code
-So far we are now just checking out the code to the Jenkins workspace for htis task. You should be able to see your code in the Workspace folder of the task in Jenkins. What we will do now is actually sync it from the workspace folder to another buy telling jenkins to run a build script
+So far we are now just checking out the code to the Jenkins workspace for this task. You should be able to see your code in the Workspace folder of the task in Jenkins. What we will do now is actually sync it from the workspace folder to another buy telling jenkins to run a build script
 
-1. In the task, click Configure and under the *Build*
+1. In the task, click Configure and under the *Build* and `Add build step`
+1. Select `Invoke Ant` this will ask you for targets, you can keep it clear. What this will do is call the `build.xml` file with the default target. We will want to pass some variables to this in a bit but let's let it run to test.
