@@ -19,7 +19,11 @@
     <target name="syncfiles">
     	
     	<sync todir="${destination}" includeemptydirs="true">
-    	  <fileset dir="${source}"/>
+    	  <fileset dir="${source}">
+		<exclude name="**/testbox/"/>
+		<exclude name="build.xml"/>
+		<exclude name="**/tests/"/>
+	</fileset>
     	  <preserveintarget>
     	    
     	  </preserveintarget>
