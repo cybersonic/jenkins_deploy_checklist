@@ -24,5 +24,10 @@ Failed to connect to repository : Command "git ls-remote -h git@github.com:cyber
 ## Deploying the code
 So far we are now just checking out the code to the Jenkins workspace for this task. You should be able to see your code in the Workspace folder of the task in Jenkins. What we will do now is actually sync it from the workspace folder to another buy telling jenkins to run a build script
 
+1. Go to the root of Jenkins and click `Manage Jenkins` and  `Global Tool Configuration`.
+1. Under Ant, click Add Ant, and give it a name like `Global Ant installation`
+1. Make sure that `Install automatically` is ticket and click `Save`
 1. In the task, click Configure and under the *Build* and `Add build step`
-1. Select `Invoke Ant` this will ask you for targets, you can keep it clear. What this will do is call the `build.xml` file with the default target. We will want to pass some variables to this in a bit but let's let it run to test.
+1. Select `Invoke Ant` 
+1. Select the *Ant Version* we defined (`GLobal Ant Installation`)
+1. Ignore the *Targets* for the moment, you can keep it clear. What this will do is call the `build.xml` file with the default target. We will want to pass some variables to this in a bit but let's let it run to test.
