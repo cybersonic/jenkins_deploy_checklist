@@ -1,14 +1,15 @@
 # Automatic Deployments with Jenkins
 ## Keys
+
 1.  Create a ssh key for jenkins to use:   `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"` and create a *deployer_rsa* and *deployer_rsa.pub* file 
-1. Go to Github enterprise 
-1. Go to your repository and click on the settings, then on the left tab look for “Deploy Keys”
+1. Go to Github (or Github enterprise)
+1. Go to your repository and click on `Settings`, then on the left tab look for `Deploy Keys`
 1.  Create a new key and copy the contents of deployer_rsa.pub into the field. 
 
 ## Jenkins configuration
 1. Install the github plugin in jenkins: 	https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Plugin (it’s usually part of it) 
-1. Let’s add the private key to jenkins. In Jenkins, on the left click on “Credentials”->”System” then click Global “Credentials (unrestricted)” and click “Add Credentials” 
-1. For Kind: set it to SSH Username with private key
+1. Let’s add the private key to jenkins. In Jenkins, on the left click on `Credentials`->`System` then click Global `Credentials (unrestricted)` and click `Add Credentials`
+1. For Kind: set it to `SSH Username with private key`
 1. Private Key: enter directly and copy the contents of deployer_rsa into the Key field and click ok. 
 1. Create a new task, under the Github project you can enter the URL to the project. This is just a link
 1. Under Source Code Management , select git and put the repository URL (such as git@github.com:cybersonic/jenkins_deploy.git ) 
