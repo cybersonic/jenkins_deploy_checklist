@@ -29,5 +29,18 @@ So far we are now just checking out the code to the Jenkins workspace for this t
 1. Make sure that `Install automatically` is ticket and click `Save`
 1. In the task, click Configure and under the *Build* and `Add build step`
 1. Select `Invoke Ant` 
-1. Select the *Ant Version* we defined (`GLobal Ant Installation`)
+1. Select the *Ant Version* we defined (`Global Ant Installation`)
 1. Ignore the *Targets* for the moment, you can keep it clear. What this will do is call the `build.xml` file with the default target. We will want to pass some variables to this in a bit but let's let it run to test.
+1. Using the ant file in this project it should sync the files from `workspace/source_dir` to `workspace/destination_dir`
+
+The build script in this project is designed to be customizable, so you can set which files get moved where, by setting the `destination` and `source` variables in your Jenkins task. 
+
+1. Edit the task configuration again. And go down to the build section
+1. click on the `Advanced...` to expand everything 
+1. edit the Properties field and click on the down arrow and add the following, changing the destination path for what you need:
+
+```
+souce=.
+destination=/var/jenkins_home/temp
+
+```
