@@ -44,3 +44,5 @@ souce=.
 destination=/var/jenkins_home/temp
 
 ```
+
+This should now synch the source directory with the destination directory
