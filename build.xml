@@ -29,7 +29,7 @@
     	<sync todir="${destination}" includeemptydirs="true">
     	  <fileset dir="${source}"/>
     	  <preserveintarget>
-    	    
+    	     <include name="**/images/**"/>
     	  </preserveintarget>
     	</sync>
 
