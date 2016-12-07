@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- ====================================================================== 
-     30 Nov 2016 14:13:34                                                        
-
-     project    
-     description
-                   
-     markdrew                                                                
-     ====================================================================== -->
 <project name="project" default="default">
     <description>
             Syncs file from a source folder to a destination folder
@@ -27,7 +19,11 @@
     <target name="syncfiles">
     	
     	<sync todir="${destination}" includeemptydirs="true">
-    	  <fileset dir="${source}"/>
+    	  <fileset dir="${source}">
+		<exclude name="**/testbox/"/>
+		<exclude name="build.xml"/>
+		<exclude name="**/tests/"/>
+	</fileset>
     	  <preserveintarget>
     	     <include name="**/images/**"/>
     	  </preserveintarget>
