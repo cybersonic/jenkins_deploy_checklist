@@ -26,7 +26,7 @@ So far we are now just checking out the code to the Jenkins workspace for this t
 
 1. Go to the root of Jenkins and click `Manage Jenkins` and  `Global Tool Configuration`.
 1. Under Ant, click Add Ant, and give it a name like `Global Ant installation`
-1. Make sure that `Install automatically` is ticket and click `Save`
+1. Make sure that `Install automatically` is ticked and click `Save`
 1. In the task, click Configure and under the *Build* and `Add build step`
 1. Select `Invoke Ant` 
 1. Select the *Ant Version* we defined (`Global Ant Installation`)
